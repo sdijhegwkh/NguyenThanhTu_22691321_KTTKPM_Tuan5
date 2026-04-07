@@ -1,0 +1,16 @@
+services:
+  app1:
+    image: nginx
+    container_name: app1
+    networks:
+      - my_network
+
+  app2:
+    image: busybox
+    container_name: app2
+    command: sh -c "while true; do sleep 1000; done"
+    networks:
+      - my_network
+
+networks:
+  my_network:cd
